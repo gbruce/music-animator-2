@@ -40,14 +40,6 @@ export function Sidebar() {
         <h1 className="text-center text-sm font-bold">MA</h1>
       </div>
 
-      {/* Upload Button */}
-      <div className="p-3">
-        <Button className="w-full flex-col gap-1 py-2 bg-accent hover:bg-accent/90">
-          <Upload size={16} />
-          <span className="text-xs">Upload</span>
-        </Button>
-      </div>
-
       {/* Navigation Items */}
       <nav className="flex-1 p-2 space-y-1">
         <SidebarItem icon={<FileVideo size={16} />} label="Media" isActive />

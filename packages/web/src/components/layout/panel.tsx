@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Upload } from 'lucide-react';
 
 interface PanelProps {
   isOpen: boolean;
@@ -9,21 +9,20 @@ interface PanelProps {
 
 export function Panel({ isOpen, onToggle }: PanelProps) {
   return (
-    <div className="h-full relative bg-background">
-      {/* Toggle Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="absolute -right-4 top-1/2 transform -translate-y-1/2 z-10 h-8 w-8 bg-muted"
-        onClick={onToggle}
-      >
-        {isOpen ? <ChevronLeft size={16} /> : <ChevronRight size={16} />}
-      </Button>
-
+    <div className="h-full bg-background flex flex-col">
       {/* Panel Content */}
-      <div className="h-full p-4">
-        <div className="flex items-center justify-between mb-4">
+      <div className="flex-1 p-4 overflow-auto">
+        {/* Header */}
+        <div className="mb-4">
           <h2 className="text-sm font-medium">Videos Space</h2>
+        </div>
+
+        {/* Upload Button */}
+        <div className="mb-4">
+          <Button className="w-full gap-2 bg-accent hover:bg-accent/90 h-10">
+            <Upload size={16} />
+            <span>Upload Media</span>
+          </Button>
         </div>
 
         {/* Empty Media Grid */}
