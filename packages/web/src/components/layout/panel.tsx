@@ -1,29 +1,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Clock } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface PanelProps {
   isOpen: boolean;
   onToggle: () => void;
-}
-
-interface MediaItemProps {
-  thumbnail: string;
-  duration: string;
-}
-
-function MediaItem({ thumbnail, duration }: MediaItemProps) {
-  return (
-    <div className="relative group cursor-pointer">
-      <div className="aspect-video rounded-md overflow-hidden bg-muted">
-        <img src={thumbnail} alt="" className="w-full h-full object-cover" />
-      </div>
-      <div className="absolute bottom-2 right-2 flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-background/80 text-xs">
-        <Clock size={12} />
-        <span>{duration}</span>
-      </div>
-    </div>
-  );
 }
 
 export function Panel({ isOpen, onToggle }: PanelProps) {
@@ -45,20 +26,9 @@ export function Panel({ isOpen, onToggle }: PanelProps) {
           <h2 className="text-sm font-medium">Videos Space</h2>
         </div>
 
-        {/* Media Grid */}
+        {/* Empty Media Grid */}
         <div className="grid grid-cols-1 gap-4">
-          <MediaItem 
-            thumbnail="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%232A2D3E'/%3E%3C/svg%3E"
-            duration="00:15"
-          />
-          <MediaItem 
-            thumbnail="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%232A2D3E'/%3E%3C/svg%3E"
-            duration="00:10"
-          />
-          <MediaItem 
-            thumbnail="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180' viewBox='0 0 320 180'%3E%3Crect width='320' height='180' fill='%232A2D3E'/%3E%3C/svg%3E"
-            duration="00:10"
-          />
+          {/* Content will be populated dynamically */}
         </div>
       </div>
     </div>
